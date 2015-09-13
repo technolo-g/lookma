@@ -113,13 +113,16 @@ images/data: build/mysql_native_stamp
 #
 # Disk images
 #
-images: images/stubetc.iso images/data.ffs
+images: images/stubetc.iso images/data.ffs images/tmp.ffs
 
 images/stubetc.iso: ../stubetc/etc
 	scripts/rumprun-makefs.sh -t cd9660 images/stubetc.iso ../stubetc/etc
 
 images/data.ffs: images/data
 	scripts/rumprun-makefs.sh -u 1 -g 1 images/data.ffs images/data
+
+images/tmp.ffs: images/tmp
+	scripts/rumprun-makefs.sh -u 1 -g 1 images/tmp.ffs images/tmp
 
 #
 # Re-link mysqld, used during development

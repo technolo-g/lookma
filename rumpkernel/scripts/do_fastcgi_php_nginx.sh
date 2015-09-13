@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 cd ../packages/php
 
@@ -9,6 +9,7 @@ sudo xl destroy php-fastcgi-daemon || echo 'php-fastcgi-daemon does not exist'
 
 sudo /home/vagrant/rumprun/app-tools/rumprun xen \
   -d \
+  -M 1024 \
   -N php-fastcgi-daemon \
   -n inet,static,10.100.199.38/24 \
   -b images/data.iso,/data \
@@ -26,6 +27,7 @@ sudo xl destroy php-fastcgi-nginx || echo 'php-fastcgi-nginx does not exist'
 
 sudo /home/vagrant/rumprun/app-tools/rumprun xen \
   -d \
+  -M 512 \
   -N php-fastcgi-nginx \
   -n inet,static,10.100.199.39/24 \
   -b images/data.iso,/data \
