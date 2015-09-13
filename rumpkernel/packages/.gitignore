@@ -1,2 +1,5 @@
 pkgs/*
 includes/*
+*/dl
+nginx/nginx.bin
+nginx_php/nginx.bin
