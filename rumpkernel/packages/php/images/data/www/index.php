@@ -1,18 +1,17 @@
-<?php 
-date_default_timezone_set('UTC');
-?>
-<html>
-<body style="font-size: 14pt;">
-    <img src="static/logo150.png"/>
-    Hello, <?php echo $_SERVER['REMOTE_ADDR']; ?>
-    <p>
-    It is now <?php echo date(DATE_RFC2822); ?>
-    <p>
-    Served to you by
-    <a href="http://nginx.org/">Nginx</a>,
-    running on a
-    <a href="http://rumpkernel.org">rump kernel</a>...
-    <p>
-    Try <a href="phpinfo.php">phpinfo()</a>.
-</body>
-</html>
+<?php
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
+
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define('WP_USE_THEMES', true);
+
+/** Loads the WordPress Environment and Template */
+require( dirname( __FILE__ ) . '/wp-blog-header.php' );
