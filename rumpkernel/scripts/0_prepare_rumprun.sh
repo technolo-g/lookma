@@ -13,7 +13,7 @@ if grep -Fxq "app-tools" ~/.bashrc; then
   echo 'Type the following command to activate:'
   echo '. ~/.bashrc'
 else
-  echo 'PATH=${PATH}:$(pwd)/app-tools'  >> ~/.bashrc
+  echo "PATH=\${PATH}:$(pwd)/app-tools" >> ~/.bashrc
   echo 'bashrc has been configured'
   echo 'Type the following command to activate:'
   echo '. ~/.bashrc'
