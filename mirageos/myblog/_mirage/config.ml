@@ -1,5 +1,11 @@
 open Mirage
 
+let ipv4_config =
+  let address = Ipaddr.V4.of_string_exn "10.100.199.41" in
+  let netmask = Ipaddr.V4.of_string_exn "255.255.255.0" in
+  let gateways = [Ipaddr.V4.of_string_exn "10.100.199.1"] in
+  { address; netmask; gateways }
+
 (* Use `FS` to set the underlying filesystem:
    FS=crunch (or nothing): use static filesystem via crunch
    FS=fat: use FAT and block device (run ./make-fat-images.sh)
