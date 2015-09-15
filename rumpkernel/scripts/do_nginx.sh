@@ -6,7 +6,7 @@ rumpbake xen_pv ./nginx.bin bin/nginx
 
 sudo xl destroy nginx-standalone || echo 'nginx-standalone does not exist'
 
-sudo /home/vagrant/rumprun/app-tools/rumprun xen \
+sudo /home/vagrant/rumprun/app-tools/rumprun -D xen \
   -d \
   -N nginx-standalone \
   -n inet,static,10.100.199.36/24 \
