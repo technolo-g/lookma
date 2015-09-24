@@ -1,0 +1,16 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "runtimeify index.js -o initrd && runtime-qemu ./initrd"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "runtimejs": "*"
+  },
+  "devDependencies": {
+    "runtime-tools": "*",
+    "runtimeify": "*"
+  }
+}

@@ -1,21 +1,32 @@
-## Links
-* Wikipedia Page: https://en.wikipedia.org/wiki/Unikernel
-* Texas Unikernel Summit: http://wiki.xenproject.org/wiki/2015_Unikernel_User_Summit
-* GoLang Unikernel Reddit: https://www.reddit.com/r/golang/comments/2w2f67/what_does_the_future_look_like_for_golang/
-* Why I Unikernel http://www.somerandomidiot.com/blog/2014/08/11/attack-surface-area/
-* My First Unikernel (MirageOS) : http://roscidus.com/blog/blog/2014/07/28/my-first-unikernel/
-* Rumpkernel publications and talks: https://github.com/rumpkernel/wiki/wiki/Info%3A-Publications-and-Talks 
+## Look Ma, no OS! Interactive Demo
+This repository contains the demo material for my talk entitled:
+** Look Ma, no OS! Unikernels and Their Applications **
 
+There are very simple 3 demos:
+- MirageOS
+- Rumprun
+- Runtime JS
 
-## Whitepaper Links:
-- The Next Generation Cloud (Xen) http://wiki.xenproject.org/mediawiki/images/3/34/XenProject_Unikernel_Whitepaper_2015_FINAL.pdf
-- No os? No problem!: http://rumpkernel.org/misc/usenix-login-2014/login_1410_03_kantee.pdf
-- Design of rumpkernel book: http://lib.tkk.fi/Diss/2012/isbn9789526049175/isbn9789526049175.pdf 
+## Runtime JS
+There are two demos in the `runtimejs` directory:
+- hello-world: This is a very basic demo that will build a unikernel that outputs the text 'Hello StrangeLoop!' on the console out.
+- webserver: This is a simple webserver written in JS that responds to all requests on port 9000 with a 200 response code and the text 'Hello StrangeLoop!'
 
-## Project Links:
-- https://github.com/tv42/alone
+In order to build and run the demos run the following commands (from within the Vagrant box):
+```
+# Running from the shared directory is slow on VMware and
+# terrible on VirtualBox so we'll clone it to the local fs.
+git clone https://github.com/technolo-g/lookma
+cd lookma/runtimejs/scripts
+./0_prepare.sh
 
+# Run the hello-world demo:
+cd ~/lookma/runtimejs/scripts
+./demo-helloworld.sh
+cd ../hello-world && npm start
 
-## Demo Ideas
-- Run the slides on an Erlang unikernel
-
+# Run the webserver demo:
+cd ~/lookma/runtimejs/scripts
+./demo-webserver.sh
+cd ../webserver && npm start
+```

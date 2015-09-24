@@ -13,6 +13,10 @@ Vagrant.configure(2) do |config|
 
   #config.ssh.username = "vagrant"
   #config.ssh.password = "vagrant"
+
+  # Forward X11
+  config.ssh.forward_x11 = true
+
   # VMware Configuration
   config.vm.provider "vmware_fusion" do |provider, override|
     override.vm.box = "vmware-xen-trusty64.box"
