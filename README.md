@@ -7,6 +7,25 @@ There are very simple 3 demos:
 - Rumprun
 - Runtime JS
 
+## Initial setup
+These demos are based on Vagrant. They should work with both VMware
+Fusion 7 and VirtualBox (even on Windows!). The only real prereq is to
+have NFS enabled on your system (or SMB) and to have Vagrant installed.
+
+Once you have Vagrant + NFS installed run the following command to bring
+up the machine and SSH to it (X11 fowarding is enabled):
+```
+vagrant up
+vagrant ssh
+```
+
+**Note:** VirtualBox is dog slow at this point in time. All of the
+instructions clone the repos to the local filesystem within the virtual
+machine, but even still when running in VirtualBox please have patience.
+If it's too slow then just purchase VMware Fusion. You won't regret that
+move if you are a frequent Vagrant user as it is much smoother and
+quicker.
+
 ## MirageOS
 The first and coolest demo is of a static site running on MirageOS; summoned just in time.
 The way it works is that we compile and package our unikernel as a Xen VM. Then we will
