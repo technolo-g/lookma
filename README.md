@@ -10,7 +10,9 @@ There are very simple 3 demos:
 ## Initial setup
 These demos are based on Vagrant. They should work with both VMware
 Fusion 7 and VirtualBox (even on Windows!). The only real prereq is to
-have NFS enabled on your system (or SMB) and to have Vagrant installed.
+have Vagrant installed. If you would like to mount the directory as a
+shared NFS mount in the VM just enable NFS on your system and uncomment
+the shared folder line.
 
 Once you have Vagrant + NFS installed run the following command to bring
 up the machine and SSH to it (X11 fowarding is enabled):
