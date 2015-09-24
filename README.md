@@ -1,11 +1,43 @@
 ## Look Ma, no OS! Interactive Demo
 This repository contains the demo material for my talk entitled:
-** Look Ma, no OS! Unikernels and Their Applications **
+**Look Ma, no OS! Unikernels and Their Applications**
 
 There are very simple 3 demos:
 - MirageOS
 - Rumprun
 - Runtime JS
+
+## Rumprun
+In order to demonstrate the Rumprun unikernel, we will stand up a very basic WordPress stack. This involves:
+- Preparing the system
+- Building and starting the MySQL unikernel
+- Building and starting the PHP unikernel
+- Building and starting the NGINX unikernel
+- Running through the WordPress install
+
+**Note:** MySQL is not tuned and is very, very slow at this
+time. I beleive this is just our implementation. Even though the install
+times out, it does actually complete and the site will load afterwards.
+
+In order to get this demo going, please perform the following steps:
+```
+# Running from the shared directory is slow on VMware and
+# terrible on VirtualBox so we'll clone it to the local fs.
+git clone https://github.com/technolo-g/lookma
+cd lookma/rumprun/scripts
+./0_prepare.sh
+
+# Fire up MySQL
+./1_mysql.sh
+
+# Fire up PHP
+./2_php.sh
+
+# Fire up NGINX
+./3_nginx.sh
+```
+
+You may now browse to `http://10.100.199.39` and complete the WordPress installation. Please note that it does go pretty slow right now.
 
 ## Runtime JS
 There are two demos in the `runtimejs` directory:

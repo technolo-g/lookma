@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
-sudo apt-get install -y libxen-dev genisoimage realpath libssl-dev cmake makefs mysql-client-core-5.5
+sudo apt-get install -y libxen-dev genisoimage realpath \
+  libssl-dev cmake makefs mysql-client-core-5.5
 
 cd ~/
 git clone https://github.com/technolo-g/rumprun.git
