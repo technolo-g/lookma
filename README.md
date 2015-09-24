@@ -126,3 +126,19 @@ cd ~/lookma/runtimejs/scripts
 ./demo-webserver.sh
 cd ../webserver && npm start
 ```
+
+## Links used to create these demos:
+### MirageOS
+- From Jekyll to Unikernel in 50 Lines: http://amirchaudhry.com/from-jekyll-to-unikernel-in-fifty-lines/
+- Just In Time Summoning of Unikernels: https://github.com/mirage/jitsu
+- My First Unikernel: http://roscidus.com/blog/blog/2014/07/28/my-first-unikernel/
+- Mirage Skeleton Repo: https://github.com/mirage/mirage-skeleton
+
+### Rumprun
+- Tutorial: https://github.com/rumpkernel/wiki/wiki/Tutorial%3A-Serve-a-static-website-as-a-Unikernel
+- Rumprun Packages: https://github.com/rumpkernel/rumprun-packages
+
+### RuntimeJS
+- RuntimeJS Homepage: http://runtimejs.org/
+
+
