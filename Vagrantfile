@@ -1,18 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Look for a Vagrantfile.local to override settings
-overrides = "#{__FILE__}.local"
-if File.exist?(overrides)
-    eval File.read(overrides)
-end
-
 Vagrant.configure(2) do |config|
-  # File system specification for shares
-  defined?(SHARE_TYPE) ? SHARE_TYPE : SHARE_TYPE = "nfs"
-
-  #config.ssh.username = "vagrant"
-  #config.ssh.password = "vagrant"
 
   # Forward X11
   config.ssh.forward_x11 = true
@@ -42,12 +31,8 @@ Vagrant.configure(2) do |config|
   end
 
   # Setup mounts
-  if SHARE_TYPE == "nfs"
-    config.vm.synced_folder ".", "/home/vagrant/project", type: "nfs"
-  end
-  if SHARE_TYPE == "smb"
-    config.vm.synced_folder ".", "/home/vagrant/project", type: "smb"
-  end
+  # Note: This mount is only for development. It is not needed to run the examples
+  # config.vm.synced_folder ".", "/home/vagrant/project", type: "nfs"
   config.vm.network "private_network", ip: "10.100.199.35"
 
 $script = <<SCRIPT
