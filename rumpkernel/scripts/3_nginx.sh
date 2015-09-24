@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-cd ../nginx_php
+cd ../packages/nginx_php
 
 # Compile NGINX
 make
