@@ -15,6 +15,10 @@ In order to demonstrate the Rumprun unikernel, we will stand up a very basic Wor
 - Building and starting the NGINX unikernel
 - Running through the WordPress install
 
+**Note:** MySQL is not tuned and is very, very slow at this
+time. I beleive this is just our implementation. Even though the install
+times out, it does actually complete and the site will load afterwards.
+
 In order to get this demo going, please perform the following steps:
 ```
 # Running from the shared directory is slow on VMware and
