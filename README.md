@@ -51,6 +51,9 @@ cd lookma/mirageos/scripts
 # Prepare the system
 ./0_prepare.sh
 
+# Activate Opam
+eval `opam config env`
+
 # Build our unikernel
 ./1_build-unikernel.sh
 
