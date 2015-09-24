@@ -2,7 +2,7 @@
 -export([start/0]).
 
 start() ->
-    spawn(fun () -> {ok, Sock} = gen_tcp:listen(8080, [{reuseaddr, true},{active, false}]),
+    spawn(fun () -> {ok, Sock} = gen_tcp:listen(80, [{reuseaddr, true},{active, false}]),
                     loop(Sock) end).
 
 loop(Sock) ->
