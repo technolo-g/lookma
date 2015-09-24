@@ -1,0 +1,5 @@
+name = "vmling"
+kernel = "vmling"
+extra = "-home /vmling -pz /vmling/ebin -s webserver start -ipaddr 10.100.199.42 -netmask 255.255.255.0 -gateway 10.100.199.1"
+vif = [ '', ]
+memory = 32

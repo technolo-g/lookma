@@ -1,0 +1,11 @@
+.railing
+.rebar
+*.beam
+*.dump
+ebin
+domain_config
+vmling
+ec2/data
+ec2/webserver.img
+.vagrant
+Vagrantfile.local
