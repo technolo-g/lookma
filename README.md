@@ -7,6 +7,51 @@ There are very simple 3 demos:
 - Rumprun
 - Runtime JS
 
+## MirageOS
+The first and coolest demo is of a static site running on MirageOS; summoned just in time.
+The way it works is that we compile and package our unikernel as a Xen VM. Then we will
+fire up a DNS daemon based on Jitsu (https://github.com/mirage/jitsu). The way Jitsu works is:
+- A user attempts to resolve a domain against the daemon (www.example.org)
+- Jitsu checks Xen to see if the configured unikernel is running
+- If it is running, the daemon returns the A record and updates its TTL on the unikernel
+- If it is not running, the daemon will start the unikernel and then return the A record
+- After 2x the configured TTL for the A record passes, the unikernel is suspended (or deleted in our example)
+- Times for the initial request are about .5 seconds which includes recieving the DNS request, starting the unikernel, and responding with a record
+- Subsequent requests take approximate .02 seconds as the unikernel is already running
+
+The site it is serving is based on the output of Jekyll (https://jekyllrb.com/). We just take those static files
+and bundle them up with an OCaml based webserver in order to serve the static assets. In order to get this demo running,
+please follow these steps:
+
+```
+# Running from the shared directory is slow on VMware and
+# terrible on VirtualBox so we'll clone it to the local fs.
+git clone https://github.com/technolo-g/lookma
+cd lookma/mirageos/scripts
+
+# Prepare the system
+./0_prepare.sh
+
+# Build our unikernel
+./1_build-unikernel.sh
+
+# Start the Jitsu DNS server
+./2_jitsu.sh
+
+# Show that there are no VMs running
+sudo xl list
+
+# Test it out (in another terminal)!
+dig @127.0.0.1 www.example.com
+sudo xl list
+
+# Browse to the site
+open http://10.100.199.41
+```
+
+In order to see it in action, you can also set your local resolvers to point at the Jitsu daemon
+on 10.100.199.35 and then just browse to http://www.example.org and you should see the blog post!
+
 ## Rumprun
 In order to demonstrate the Rumprun unikernel, we will stand up a very basic WordPress stack. This involves:
 - Preparing the system
