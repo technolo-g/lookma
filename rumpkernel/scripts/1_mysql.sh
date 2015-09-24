@@ -2,7 +2,7 @@
 
 cd ../packages/mysql
 # Remove any existing images
-rm -f images/data.ffs
+rm -f images/data.ffs images/tmp.ffs
 
 # Build MySQL
 make
