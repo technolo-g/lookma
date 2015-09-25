@@ -35,4 +35,6 @@ mysql -h 10.100.199.40 -u rump -e 'flush privileges;'
 
 echo 'You can connect to MySQL by:'
 echo 'mysql -h 10.100.199.40 -u rump'
+echo 'or'
+echo 'mysql -h rump-mysql.unikornel.com -u rump'
 

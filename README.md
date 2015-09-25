@@ -72,15 +72,15 @@ eval `opam config env`
 sudo xl list
 
 # Test it out (in another terminal)!
-dig @127.0.0.1 www.example.com
+dig @127.0.0.1 jitsu.unikornel.com 
 sudo xl list
 
 # Browse to the site
-open http://10.100.199.41
+open http://mirageos.unikornel.com # Not Jitsu
+# or
+open http://jitsu.unikornel.com
 ```
 
-In order to see it in action, you can also set your local resolvers to point at the Jitsu daemon
-on 10.100.199.35 and then just browse to http://www.example.org and you should see the blog post!
 
 ## Rumprun
 In order to demonstrate the Rumprun unikernel, we will stand up a very basic WordPress stack. This involves:
@@ -112,7 +112,7 @@ cd lookma/rumprun/scripts
 ./3_nginx.sh
 ```
 
-You may now browse to `http://10.100.199.39` and complete the WordPress installation. Please note that it does go pretty slow right now.
+You may now browse to `http://rumprun.unikornel.com` and complete the WordPress installation. Please note that it does go pretty slow right now.
 
 ## Runtime JS
 There are two demos in the `runtimejs` directory:

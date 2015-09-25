@@ -23,4 +23,5 @@ sudo /home/vagrant/rumprun/app-tools/rumprun xen \
   -- bin/php-cgi.bin -b 8000
 
 echo 'PHP Has been started!'
+echo 'rump-php.unikornel.com'
 
