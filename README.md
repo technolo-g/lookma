@@ -1,11 +1,17 @@
 ## Look Ma, no OS! Interactive Demo
 This repository contains the demo material for my talk entitled:
+
 **Look Ma, no OS! Unikernels and Their Applications**
 
-There are very simple 3 demos:
-- MirageOS
+The slides can be found here:
+
+http://slides.com/technolo-g/look-ma-no-os-unikernels-and-their-applications
+
+There 4 very simple demos:
+- MirageOS (with Jitsu)
 - Rumprun
 - Runtime JS
+- LING
 
 ## Initial setup
 These demos are based on Vagrant. They should work with both VMware
@@ -132,6 +138,33 @@ cd ~/lookma/runtimejs/scripts
 cd ../webserver && npm start
 ```
 
+## LING (Erlang on Xen)
+
+The LING demo is a basic webserver serving static content via an
+Erlang/OTP application. In this demo we compile the application and
+it's dependencies with `rebar` (the binary is included in this repo) and
+then package the tool using `railing` (also included here). The
+unikernel is then run on Xen and you are dropped into the Erlang shell
+on the system with the application started.
+
+Getting this demo running is as simple as the rest:
+```
+# Running from the shared directory is slow on VMware and
+# terrible on VirtualBox so we'll clone it to the local fs.
+git clone https://github.com/technolo-g/lookma
+cd lookma/ling/scripts
+
+# The machine has everything needed so no setup!
+# Build the unikernel
+./1_build.sh
+
+# Run the unikernel
+./2_run.sh
+
+# See the results!
+open http://ling.unikornel.com
+```
+
 ## Links used to create these demos:
 ### MirageOS
 - From Jekyll to Unikernel in 50 Lines: http://amirchaudhry.com/from-jekyll-to-unikernel-in-fifty-lines/
@@ -145,5 +178,4 @@ cd ../webserver && npm start
 
 ### RuntimeJS
 - RuntimeJS Homepage: http://runtimejs.org/
-
 
