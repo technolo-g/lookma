@@ -23,5 +23,5 @@ sudo /home/vagrant/rumprun/app-tools/rumprun xen \
 
 
 echo 'You can browse to WordPress at:'
-echo 'http://10.100.199.39'
+echo 'http://rumprun.unikornel.com'
 

@@ -20,7 +20,7 @@ sudo xl destroy www || echo 'www unikernel does not exist!'
 # sudo xl create www.xl
 
 #echo 'Browse to:'
-#echo 'http://10.100.199.41'
+#echo 'http://mirageos.unikornel.com'
 
 echo 'Start jitsu using the provided script.'
 echo 'Then show that there are no unikernels running:'
