@@ -99,7 +99,7 @@ In order to get this demo going, please perform the following steps:
 # Running from the shared directory is slow on VMware and
 # terrible on VirtualBox so we'll clone it to the local fs.
 git clone https://github.com/technolo-g/lookma
-cd lookma/rumprun/scripts
+cd lookma/rumpkernel/scripts
 ./0_prepare.sh
 
 # Fire up MySQL
