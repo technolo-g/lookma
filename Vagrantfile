@@ -32,7 +32,7 @@ Vagrant.configure(2) do |config|
 
   # Setup mounts
   # Note: This mount is only for development. It is not needed to run the examples
-  # config.vm.synced_folder ".", "/home/vagrant/project", type: "nfs"
+  config.vm.synced_folder ".", "/home/vagrant/project", type: "nfs"
   config.vm.network "private_network", ip: "10.100.199.35"
 
 $script = <<SCRIPT
